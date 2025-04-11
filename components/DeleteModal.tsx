@@ -29,7 +29,7 @@ function DeleteModal({ roomId }: DeleteModalProps) {
       await deleteDocument(roomId, user?.primaryEmailAddress?.emailAddress || "");
       setOpen(false);
     } catch (error: any) {
-      setErrorMsg(error.message);
+      setErrorMsg('Only creator can delete this document');
     }
 
     setLoading(false);
